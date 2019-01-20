@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    
+    <ViewAnimator
+        android:id="@+id/viewAnimator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out"
+        >
+        
+        <include layout="@layout/layout_loading"/>
+        
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            >
+        
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        />
+                
+                    <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/circlePageIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="12dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        app:radius="3dp"
+                        app:strokeWidth="1dp"
+                        app:fillColor="@color/colorPrimary"
+                        app:pageColor="@color/colorDarkBack"
+                        />
+                
+                    <TextView
+                        android:id="@+id/textViewInfoTitle"
+                        android:text="@string/state_of_plant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:paddingRight="8dp"
+                        android:textSize="16sp"
+                        />
+                
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                    
+                        <TextView
+                            android:id="@+id/textViewTitleFlower"
+                            android:text="@string/flower_count_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:paddingRight="12dp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+                    
+                        <TextView
+                            android:id="@+id/textViewFlowerCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:paddingRight="12dp"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:textAlignment="textEnd"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+                
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                    
+                        <TextView
+                            android:id="@+id/textViewTitleFruitCount"
+                            android:text="@string/fruit_count_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:paddingRight="8dp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            />
+                    
+                        <TextView
+                            android:id="@+id/textViewerFruitCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:paddingRight="12dp"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:textAlignment="textEnd"
+                            />
+                    </android.support.constraint.ConstraintLayout>
+                
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChartPlantRatio"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_margin="20dp"
+                        />
+            
+                </LinearLayout>
+        
+            </ScrollView>
+        
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/buttonAddPicture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:tint="@color/colorButtonText"
+                app:srcCompat="@drawable/ic_round_add_photo_alternate_24px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:fabCustomSize="60dp"
+                app:elevation="1dp"
+                app:backgroundTint="@color/design_default_color_primary"
+                />
+    
+        </android.support.constraint.ConstraintLayout>
+        
+    </ViewAnimator>
+</layout>

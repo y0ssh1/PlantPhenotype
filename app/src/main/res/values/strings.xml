@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PlantPhenotyping</string>
+    <string name="start_select_photo">写真を選択する</string>
+    <string name="state_of_plant">植物の状態</string>
+    <string name="flower_count_title">花芽:</string>
+    <string name="fruit_count_title">実:</string>
+    <string name="count">%1$d個</string>
+    <string name="no_image">画像がありません</string>
+</resources>
